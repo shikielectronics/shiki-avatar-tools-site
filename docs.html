@@ -8,7 +8,9 @@
   <link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&family=Noto+Sans+TC:wght@400;600;700&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css"><script src="./assets/js/extra.js" defer></script><script src="./assets/js/script.js" defer></script>
+  <link rel="stylesheet" href="./assets/css/style.css"><script src="./assets/js/translations.js" defer></script><script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/docs-data.js" defer></script>
+  <script src="./assets/js/docs-index.js" defer></script>
 </head>
 <body data-page="docs">
   <a class="skip-link" href="#main"><span data-i18n="skip" >本文へ移動</span></a>
@@ -31,10 +33,24 @@
   <div class="page-shell">
     <header class="topbar"><span class="topbar-path">SHIKI™ <span>/</span> DOCS</span><div class="topbar-tools"><a class="topbar-action" href="https://shikielectronics.github.io/vpm-repository/"><span data-i18n="top_install" >VCC に追加</span> <svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#external"/></svg></a></div></header>
     <main id="main">
-<section class="page-section"><div class="section-head"><div><span class="section-index">03 / DOCUMENTATION</span><h1 data-i18n="nav_docs" id="page-title">ドキュメント</h1></div><p data-i18n="docs_hub_intro" >共通の導入手順と製品別ガイド</p></div>
-  <div class="doc-index"><article class="card doc-index-card"><span class="doc-label">SHIKI AVATAR TOOLS / COMMON</span><h2 data-i18n="docs_common_title" >共通ドキュメント</h2><p data-i18n="docs_common_body" >VCC にリポジトリを追加し、SHIKI Avatar Tools のパッケージを導入する手順。</p><a class="inline-link" href="./docs/install.html"><span data-i18n="docs_open" >ドキュメントを開く</span> <svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#right"/></svg></a></article>
-  <article class="card doc-index-card"><span class="doc-label">PRODUCT 01 / BETA</span><h2>Avatar Transmute</h2><p data-i18n="docs_at_body" >診断、軽量化、VRM 変換の基本的な作業の流れと確認事項。</p><a class="inline-link" href="./docs/avatar-transmute.html"><span data-i18n="docs_open" >ドキュメントを開く</span> <svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#right"/></svg></a></article></div>
-</section></main>
+      <!-- この下の section がページ本文です。写真もここに追加できます。 -->
+<section class="page-section">
+  <div class="section-head">
+    <div>
+      <span class="section-index">03 / DOCUMENTATION</span>
+      <h1 data-i18n="nav_docs" id="page-title">
+        ドキュメント
+      </h1>
+    </div>
+    <p data-i18n="docs_hub_intro" >
+      共通の導入手順と製品別ガイド
+    </p>
+  </div>
+  <!-- Generated cards come from docs/markdown/ja/*.md via docs-data.js. -->
+  <div class="doc-index" id="docs-list"></div>
+  <noscript><p>JavaScript を有効にするとドキュメント一覧が表示されます。</p></noscript>
+</section>
+    </main>
     <footer class="footer"><span class="footer-brand">SHIKI™</span><span>© 2026 zukki</span><a href="#main"><span data-i18n="back_top" >ページの先頭へ</span> <svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#up"/></svg></a></footer>
   </div>
 </body></html>

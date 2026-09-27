@@ -125,3 +125,27 @@ html[lang="ko"] body{font-family:'Noto Sans KR','M PLUS 1p',sans-serif}html[lang
   :root.theme-ready .scene-toggle .toggle-orb,
   :root.theme-ready .scene-toggle .toggle-orb svg {transition:none!important}
 }
+
+/* Documentation media: figures added directly to docs/*.html. */
+.docs-figure{margin:22px 0 0}
+.docs-figure img{display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface-alt)}
+.docs-figure figcaption{margin-top:9px;color:var(--muted);font-size:12px;line-height:1.7}
+
+/* Markdown guides: docs/markdown/<locale>/*.md renders into these pages. */
+.markdown-header{margin:0 0 24px}
+.markdown-body[hidden]{display:none!important}
+.markdown-body{max-width:900px;padding:clamp(22px,4vw,44px);border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text);line-height:1.9;overflow-wrap:anywhere}
+.markdown-body h1{font-size:clamp(2rem,3vw,2.8rem);line-height:1.25;margin:0 0 20px}
+.markdown-body h2{font-size:clamp(1.35rem,2vw,1.7rem);line-height:1.4;margin:42px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.markdown-body h3{font-size:1.1rem;margin:27px 0 10px}
+.markdown-body p,.markdown-body li{font-size:15px;color:var(--sub)}
+.markdown-body p{margin:13px 0 20px}.markdown-body ul,.markdown-body ol{padding-left:1.5em;margin:14px 0 24px}.markdown-body li{padding:4px 0}
+.markdown-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.markdown-body img{display:block;max-width:100%;height:auto;margin:20px auto;border:1px solid var(--border);border-radius:10px}
+.markdown-body figure{margin:24px 0}.markdown-body figcaption{color:var(--muted);font-size:13px;text-align:center}
+.markdown-body blockquote{margin:20px 0;padding:6px 18px;border-left:3px solid var(--accent);background:var(--surface-alt)}
+.markdown-body pre{max-width:100%;overflow:auto;padding:18px;border-radius:8px;background:var(--surface-alt);border:1px solid var(--border);line-height:1.5}
+.markdown-body code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}.markdown-body :not(pre)>code{padding:2px 5px;border-radius:4px;background:var(--surface-alt)}
+.markdown-body table{display:block;width:100%;overflow-x:auto;border-collapse:collapse;margin:22px 0}.markdown-body th,.markdown-body td{padding:9px 12px;border:1px solid var(--border);text-align:left}.markdown-body th{background:var(--surface-alt)}
+.markdown-body hr{border:0;border-top:1px solid var(--border);margin:32px 0}
+@media(max-width:760px){.markdown-body{padding:22px 18px}}
