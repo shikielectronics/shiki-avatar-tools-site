@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="800"
+   height="480"
+   viewBox="100 340 800 480"
+   sodipodi:docname="SHIKI-Electronics.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:export-filename="SHIKI.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="0.75488281"
+     inkscape:cx="317.93014"
+     inkscape:cy="506.70117"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1">
+    <path
+       style="fill:#000000"
+       d="M 134,575.5 V 539 h 24 24 v 14.01313 14.01313 L 216.25,566.76313 250.5,566.5 v -17.92431 -17.9243 l -15,-6.2115 c -16.71566,-6.92195 -67.83125,-28.47287 -88.25,-37.20721 L 134,481.56484 V 424.78242 368 h 82.5 82.5 v 35 35 H 275 251 V 426.5 415 H 216.5 182 v 16.29238 16.29238 l 8.75,3.88831 c 4.8125,2.13857 11.225,4.99943 14.25,6.35746 3.025,1.35803 11.125,4.8386 18,7.73458 6.875,2.89599 23.975,10.28013 38,16.4092 14.025,6.12906 28.3125,12.29004 31.75,13.69106 l 6.25,2.54731 V 532.60634 567 H 314.5 330 V 467.5 368 h 23.5 23.5 v 48 48 h 44 44 v -48 -48 h 23.5 23.5 v 99.5 99.5 h 16 16 V 467.5 368 h 24 24 V 467.5 567 H 608.5 625 V 467.5 368 h 23.5 23.5 v 45 c 0,29.33333 0.34815,45 1,45 0.55,0 1,-0.38115 1,-0.84699 0,-0.46584 0.85914,-1.83758 1.90919,-3.0483 2.13985,-2.46728 4.98034,-5.96505 14.29652,-17.60471 24.95148,-31.17447 33.39695,-41.69366 43.55528,-54.25 L 745.28953,368 h 29.35523 C 790.79014,368 804,368.27161 804,368.60358 c 0,0.33197 -2.1375,3.18874 -4.75,6.34838 -2.6125,3.15964 -6.1,7.47357 -7.75,9.5865 -1.65,2.11294 -4.35,5.50144 -6,7.53 -1.65,2.02856 -6.375,8.09584 -10.5,13.48283 -4.125,5.38699 -7.9707,10.27922 -8.54601,10.87162 -0.5753,0.5924 -10.4753,13.12428 -22,27.84863 -11.52469,14.72434 -22.91203,29.25839 -25.30519,32.29788 l -4.3512,5.52635 2.73611,4.20211 c 1.50486,2.31117 5.07592,7.35212 7.93569,11.20212 2.85977,3.85 7.86156,10.58206 11.11509,14.96014 3.25353,4.37807 6.68259,9.10307 7.62013,10.5 2.07351,3.08951 11.2542,15.76314 23.16004,31.97161 L 776.22932,567 H 804.11466 832 V 467.5 368 h 24 24 V 490 612 H 672.5 465 v -49 -49 h -44 -44 v 49 49 H 255.5 134 Z m 580,-9.07566 c 0,-0.5259 -7.54544,-10.89457 -30.8728,-42.42434 -4.67956,-6.325 -9.09755,-12.15893 -9.81775,-12.96429 -1.08286,-1.2109 -1.30945,3.50445 -1.30945,27.25 V 567 h 21 c 11.55,0 21,-0.25905 21,-0.57566 z"
+       id="path1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:106.901px;font-family:Orbitron;-inkscape-font-specification:Orbitron;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#000000;stroke-width:0"
+       x="115.48363"
+       y="765.06647"
+       id="text1"
+       transform="scale(1.1012132,0.90808937)"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="115.48363"
+         y="765.06647"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Orbitron;-inkscape-font-specification:Orbitron;fill:#000000;stroke-width:0">Electronics.</tspan></text>
+  </g>
+</svg>
