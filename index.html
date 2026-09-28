@@ -1,44 +1,367 @@
 <!doctype html>
 <html lang="ja" data-theme="dark">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#212121">
-  <meta name="description" content="SHIKI Avatar Tools。Unity 向けアバター制作ツールの概要、ニュース、ドキュメント、ライセンス、VCC インストール。">
-  <title>概要 — SHIKI™</title>
-  <link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&family=Noto+Sans+TC:wght@400;600;700&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css"><script src="./assets/js/translations.js" defer></script><script src="./assets/js/script.js" defer></script>
-</head>
-<body data-page="overview">
-  <a class="skip-link" href="#main"><span data-i18n="skip" >本文へ移動</span></a>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <aside class="sidebar" id="site-sidebar" aria-label="Site navigation">
-    <div class="sidebar-head">
-      <a class="brand" href="./index.html" aria-label="SHIKI Avatar Tools"><img src="./assets/svg/shiki-logo.svg" alt="SHIKI Electronics"></a>
-      <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-controls="site-sidebar" aria-expanded="true" aria-label="サイドバーを折りたたむ"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#sidebar"/></svg></button>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#212121">
+    <meta name="description" content="SHIKI Avatar Tools。Unity 向けアバター制作ツールの概要、ニュース、ドキュメント、ライセンス、VCC インストール。">
+    <title>概要 — SHIKI™</title>
+    <link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&family=Noto+Sans+TC:wght@400;600;700&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/translations.js" defer>
+    </script>
+    <script src="./assets/js/script.js" defer>
+    </script>
+  </head>
+  <body data-page="overview">
+    <a class="skip-link" href="#main">
+      <span data-i18n="skip" >本文へ移動</span>
+    </a>
+    <div class="cursor-glow" aria-hidden="true">
     </div>
-    <nav class="side-nav" aria-label="Main navigation"><a href="./index.html" class="active" aria-current="page"><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#home"/></svg></span><span data-i18n="nav_overview" >概要</span></a><a href="./news.html" class="" ><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#news"/></svg></span><span data-i18n="nav_news" >ニュース</span></a><div class="nav-group" data-nav-group="products"><button type="button" class="nav-disclosure" aria-controls="nav-products-items" aria-expanded="false" aria-label="製品"><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#cube"/></svg></span><span data-i18n="nav_products" >製品</span><svg class="nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#down"/></svg></button><div class="nav-branch" id="nav-products-items" hidden><a href="./tools/avatar-transmute.html" class="nav-child" ><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#right"/></svg></span><span data-i18n="nav_avatar_transmute" >Avatar Transmute</span></a></div></div><div class="nav-group" data-nav-group="docs"><button type="button" class="nav-disclosure" aria-controls="nav-docs-items" aria-expanded="false" aria-label="ドキュメント"><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#book"/></svg></span><span data-i18n="nav_docs" >ドキュメント</span><svg class="nav-chevron" aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#down"/></svg></button><div class="nav-branch" id="nav-docs-items" hidden><a href="./docs.html" class="nav-child " ><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#book"/></svg></span><span data-i18n="nav_docs_all" >一覧を見る</span></a><a href="./docs/install.html" class="nav-child" ><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#download"/></svg></span><span data-i18n="nav_docs_install" >共通 / インストール</span></a><a href="./docs/avatar-transmute.html" class="nav-child" ><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#book"/></svg></span><span data-i18n="nav_docs_at" >Avatar Transmute</span></a></div></div><a href="./license.html" class="" ><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#license"/></svg></span><span data-i18n="nav_license" >ライセンス</span></a><a href="https://shikielectronics.github.io/vpm-repository/" class="install-nav" ><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#download"/></svg></span><span data-i18n="nav_install" >VCC インストール</span></a><a href="./donate.html" class="" ><span class="nav-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#heart"/></svg></span><span data-i18n="nav_donate" >寄付</span></a></nav>
-    <div class="sidebar-bottom">
-      <div class="settings-panel" id="settings-panel" hidden role="group" aria-label="Settings">
-        <div class="settings-heading"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#settings"/></svg><strong data-i18n="settings" >設定</strong></div>
-        <div class="lang-select-wrap"><label for="language-select"><span data-i18n="language" >言語</span></label><select id="language-select" aria-label="Language"><option value="ja">JP</option><option value="ko">KR</option><option value="zh-CN">CN</option><option value="zh-TW">CN-TW</option><option value="en">EN</option></select></div>
-        <div class="theme-row"><span><span data-i18n="appearance" >表示</span></span><button class="scene-toggle" id="theme-toggle" type="button" aria-label="ライトテーマに切り替える" aria-pressed="true"><span class="toggle-sky toggle-sky-day"></span><span class="toggle-sky toggle-sky-night"></span><span class="toggle-cloud"></span><span class="toggle-stars"></span><span class="toggle-orb"><svg class="orb-sun" aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#sun"/></svg><svg class="orb-moon" aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#moon"/></svg></span></button></div>
+    <aside class="sidebar" id="site-sidebar" aria-label="Site navigation">
+      <div class="sidebar-head">
+        <a class="brand" href="./index.html" aria-label="SHIKI Avatar Tools">
+          <img src="./assets/svg/shiki-logo.svg" alt="SHIKI Electronics">
+        </a>
+        <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-controls="site-sidebar" aria-expanded="true" aria-label="サイドバーを折りたたむ">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use href="./assets/svg/icons.svg#sidebar"/>
+          </svg>
+        </button>
       </div>
-      <button type="button" class="settings-button" id="settings-button" aria-controls="settings-panel" aria-expanded="false" aria-label="設定を開く"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#settings"/></svg><span data-i18n="settings" >設定</span></button>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a href="./index.html" class="active" aria-current="page">
+          <span class="nav-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#home"/>
+            </svg>
+          </span>
+          <span data-i18n="nav_overview" >概要</span>
+        </a>
+        <a href="./news.html" class="" >
+          <span class="nav-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#news"/>
+            </svg>
+          </span>
+          <span data-i18n="nav_news" >ニュース</span>
+        </a>
+        <div class="nav-group" data-nav-group="products">
+          <button type="button" class="nav-disclosure" aria-controls="nav-products-items" aria-expanded="false" aria-label="Unity拡張">
+            <span class="nav-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use href="./assets/svg/icons.svg#cube"/>
+              </svg>
+            </span>
+            <span data-i18n="nav_products" >Unity拡張</span>
+            <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#down"/>
+            </svg>
+          </button>
+          <div class="nav-branch" id="nav-products-items" hidden>
+            <a href="./tools/avatar-transmute.html" class="nav-child" >
+              <span class="nav-icon">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <use href="./assets/svg/icons.svg#right"/>
+                </svg>
+              </span>
+              <span data-i18n="nav_avatar_transmute" >Avatar Transmute</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-group" data-nav-group="docs">
+          <button type="button" class="nav-disclosure" aria-controls="nav-docs-items" aria-expanded="false" aria-label="ドキュメント">
+            <span class="nav-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use href="./assets/svg/icons.svg#book"/>
+              </svg>
+            </span>
+            <span data-i18n="nav_docs" >ドキュメント</span>
+            <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#down"/>
+            </svg>
+          </button>
+          <div class="nav-branch" id="nav-docs-items" hidden>
+            <a href="./docs.html" class="nav-child " >
+              <span class="nav-icon">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <use href="./assets/svg/icons.svg#book"/>
+                </svg>
+              </span>
+              <span data-i18n="nav_docs_all" >一覧を見る</span>
+            </a>
+            <a href="./docs/install.html" class="nav-child" >
+              <span class="nav-icon">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <use href="./assets/svg/icons.svg#download"/>
+                </svg>
+              </span>
+              <span data-i18n="nav_docs_install" >共通 / インストール</span>
+            </a>
+            <a href="./docs/avatar-transmute.html" class="nav-child" >
+              <span class="nav-icon">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <use href="./assets/svg/icons.svg#book"/>
+                </svg>
+              </span>
+              <span data-i18n="nav_docs_at" >Avatar Transmute</span>
+            </a>
+          </div>
+        </div>
+        <a href="./license.html" class="" >
+          <span class="nav-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#license"/>
+            </svg>
+          </span>
+          <span data-i18n="nav_license" >ライセンス</span>
+        </a>
+        <a href="https://shikielectronics.github.io/vpm-repository/" class="install-nav" >
+          <span class="nav-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#download"/>
+            </svg>
+          </span>
+          <span data-i18n="nav_install" >VCC インストール</span>
+        </a>
+        <a href="./donate.html" class="" >
+          <span class="nav-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#heart"/>
+            </svg>
+          </span>
+          <span data-i18n="nav_donate" >寄付</span>
+        </a>
+        <a href="./support.html" class="" >
+          <span class="nav-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#support"/>
+            </svg>
+          </span>
+          <span data-i18n="nav_support" >サポート</span>
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="settings-panel" id="settings-panel" hidden role="group" aria-label="Settings">
+          <div class="settings-heading">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#settings"/>
+            </svg>
+            <strong data-i18n="settings" >設定</strong>
+          </div>
+          <div class="lang-select-wrap">
+            <label for="language-select">
+              <span data-i18n="language" >言語</span>
+            </label>
+            <select id="language-select" aria-label="Language">
+              <option value="ja">JP</option>
+              <option value="ko">KR</option>
+              <option value="zh-CN">CN</option>
+              <option value="zh-TW">CN-TW</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+          <div class="theme-row">
+            <span>
+              <span data-i18n="appearance" >表示</span>
+            </span>
+            <button class="scene-toggle" id="theme-toggle" type="button" aria-label="ライトテーマに切り替える" aria-pressed="true">
+              <span class="toggle-sky toggle-sky-day">
+              </span>
+              <span class="toggle-sky toggle-sky-night">
+              </span>
+              <span class="toggle-cloud">
+              </span>
+              <span class="toggle-stars">
+              </span>
+              <span class="toggle-orb">
+                <svg class="orb-sun" aria-hidden="true" viewBox="0 0 24 24">
+                  <use href="./assets/svg/icons.svg#sun"/>
+                </svg>
+                <svg class="orb-moon" aria-hidden="true" viewBox="0 0 24 24">
+                  <use href="./assets/svg/icons.svg#moon"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <button type="button" class="settings-button" id="settings-button" aria-controls="settings-panel" aria-expanded="false" aria-label="設定を開く">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use href="./assets/svg/icons.svg#settings"/>
+          </svg>
+          <span data-i18n="settings" >設定</span>
+        </button>
+      </div>
+    </aside>
+    <div class="page-shell">
+      <header class="topbar">
+        <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="site-sidebar" aria-expanded="false" aria-label="メニューを開く">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use href="./assets/svg/icons.svg#menu"/>
+          </svg>
+        </button>
+        <span class="topbar-path">SHIKI™ <span>/</span> OVERVIEW</span>
+        <div class="topbar-tools">
+          <a class="topbar-action" href="https://shikielectronics.github.io/vpm-repository/">
+            <span data-i18n="top_install" >VCC に追加</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <use href="./assets/svg/icons.svg#external"/>
+            </svg>
+          </a>
+        </div>
+      </header>
+      <main id="main">
+        <div class="intro" id="products">
+          <div class="overview-heading">
+            <span class="section-index">01 / OVERVIEW</span>
+          </div>
+
+          <!-- PRODUCT 01: Avatar Transmute -->
+          <section class="product-showcase" aria-label="Avatar Transmute" data-reveal>
+            <div class="eyebrow">
+              <span class="eyebrow-line">
+              </span>
+              SHIKI™ <span class="edition">PRODUCT 01</span>
+            </div>
+
+            <div class="intro-grid">
+              <div class="product-copy">
+                <p class="kicker">CREATE / CONVERT / OPTIMIZE</p>
+                <h1 id="page-title" data-i18n="overview_title">VRM変換を、もっと簡単に。</h1>
+                <p class="lead" data-i18n="overview_lead">SHIKI Avatar Tools / Avatar Transmute は、VRChat向けアバターのVRM変換を支える非破壊のツールです。診断から軽量化、VRMへの変換まで、既存ツールよりも簡単に、かつ確実な変換を行います。</p>
+
+                <div class="intro-actions">
+                  <a class="btn btn-primary" href="./tools/avatar-transmute.html">
+                    <span data-i18n="button_detail">詳しくみる</span>
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                      <use href="./assets/svg/icons.svg#right"/>
+                    </svg>
+                  </a>
+                  <a class="btn btn-secondary" href="https://shikielectronics.github.io/vpm-repository/">
+                    <span data-i18n="button_install">VCC から導入</span>
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                      <use href="./assets/svg/icons.svg#external"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="product-panel card" data-reveal>
+                <div class="panel-top">
+                  <span>PRODUCT 01</span>
+                  <span class="beta-pill">BETA</span>
+                </div>
+                <div class="product-glyph" aria-hidden="true">
+                  <img src="./assets/svg/avatar-transmute.svg" alt="">
+                </div>
+                <h2>Avatar Transmute</h2>
+                <p data-i18n="product_desc">アバターの診断・軽量化・VRM 0.x / 1.0 変換を行う Unity Editor 拡張。</p>
+                <div class="panel-footer">
+                  <span>UNITY 2022.3</span>
+                  <span>MIT LICENSE</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="capability-grid">
+              <article class="mini-card" data-reveal style="--reveal-delay:0ms">
+                <span class="feature-num">01</span>
+                <h3 data-i18n="feature_diagnose">診断</h3>
+                <p data-i18n="feature_diagnose_desc">アバターの構成を調べ、変換前に確認する。</p>
+              </article>
+              <article class="mini-card" data-reveal style="--reveal-delay:70ms">
+                <span class="feature-num">02</span>
+                <h3 data-i18n="feature_optimize">軽量化</h3>
+                <p data-i18n="feature_optimize_desc">メッシュ削減やポリゴン数の削減、ボーンの統合まで幅広く支援します。</p>
+              </article>
+              <article class="mini-card" data-reveal style="--reveal-delay:140ms">
+                <span class="feature-num">03</span>
+                <h3 data-i18n="feature_convert">VRM 変換</h3>
+                <p data-i18n="feature_convert_desc">表情・揺れ物・コライダー・マテリアルなどを確実に変換する。</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- PRODUCT 02: Omni Fitter -->
+          <section class="product-showcase" aria-label="Omni Fitter" data-reveal>
+            <div class="eyebrow">
+              <span class="eyebrow-line">
+              </span>
+              SHIKI™ <span class="edition">PRODUCT 02</span>
+            </div>
+
+            <div class="intro-grid">
+              <div class="product-copy">
+                <p class="kicker">COMPATIBLE / FITTER</p>
+                <h2 style="font-size:clamp(2.3rem,4.5vw,4.5rem);line-height:1.32;letter-spacing:-.06em;margin-bottom:22px;font-weight:800" data-i18n="omni_fitter_title">
+                  非対応衣装を、もっと手軽に。
+                </h2>
+                <p class="lead" data-i18n="omni_fitter_lead">SHIKI Avatar Tools / Omni Fitter は、Unity でのアバター改変を支える非破壊のツールです。非対応衣装を対応衣装に手軽に変換します。</p>
+
+                <!-- 詳細ページを作成したら、下の span を a タグに変更する -->
+                <div class="intro-actions">
+                  <span class="btn btn-secondary" aria-disabled="true" data-i18n="omni_fitter_details">詳しくみる（準備中）</span>
+                </div>
+              </div>
+
+              <div class="product-panel card" data-reveal>
+                <div class="panel-top">
+                  <span>PRODUCT 02</span>
+                  <span class="beta-pill">DEVELOPING</span>
+                </div>
+                <div class="product-glyph" aria-hidden="true">
+                  <img src="./assets/svg/omni-fitter.svg" alt="">
+                  <!--
+                  <svg width="260" height="150" viewBox="0 0 260 150" role="img">
+                    <text x="130" y="105" text-anchor="middle"
+                          fill="currentColor" font-family="Orbitron, sans-serif"
+                          font-size="100" font-weight="800" letter-spacing="-12">OF</text>
+                  </svg>
+                  -->
+                </div>
+                <h2>Omni Fitter</h2>
+                <p data-i18n="omni_fitter_panel_description">アバターの非対応衣装を対応衣装に変換する Unity Editor 拡張。</p>
+                <div class="panel-footer">
+                  <span>UNITY 2022.3</span>
+                  <span>DEVELOPING</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="capability-grid">
+              <article class="mini-card" data-reveal style="--reveal-delay:0ms">
+                <span class="feature-num">01</span>
+                <h3 data-i18n="omni_fitter_feature_01">準備</h3>
+                <p data-i18n="omni_fitter_feature_01_description">必要なデータは着せたいアバターと衣装の二つのみ。</p>
+              </article>
+              <article class="mini-card" data-reveal style="--reveal-delay:70ms">
+                <span class="feature-num">02</span>
+                <h3 data-i18n="omni_fitter_feature_02">解析</h3>
+                <p data-i18n="omni_fitter_feature_02_description">MA非対応衣装を解析する。</p>
+              </article>
+              <article class="mini-card" data-reveal style="--reveal-delay:140ms">
+                <span class="feature-num">03</span>
+                <h3 data-i18n="omni_fitter_feature_03">変換</h3>
+                <p data-i18n="omni_fitter_feature_03_description">変換後、MA対応衣装として .prefab を出力する。</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <span class="footer-brand">SHIKI™</span>
+        <span>© 2026 zukki</span>
+        <a href="#main">
+          <span data-i18n="back_top" >ページの先頭へ</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use href="./assets/svg/icons.svg#up"/>
+          </svg>
+        </a>
+      </footer>
     </div>
-  </aside>
-  <div class="page-shell">
-    <header class="topbar"><span class="topbar-path">SHIKI™ <span>/</span> OVERVIEW</span><div class="topbar-tools"><a class="topbar-action" href="https://shikielectronics.github.io/vpm-repository/"><span data-i18n="top_install" >VCC に追加</span> <svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#external"/></svg></a></div></header>
-    <main id="main"><div class="intro" id="products"><div class="overview-heading"><span class="section-index">01 / OVERVIEW</span></div><section class="product-showcase" aria-label="Avatar Transmute" data-reveal>
-      <div class="eyebrow"><span class="eyebrow-line"></span> SHIKI™ <span class="edition">PRODUCT 01</span></div>
-      <div class="intro-grid"><div class="product-copy"><p class="kicker">CREATE / CONVERT / OPTIMIZE</p>
-        <h1 data-i18n="overview_title" id="page-title">アバター制作を、もっと自由に。</h1><p data-i18n="overview_lead" class="lead">SHIKI Avatar Tools は、Unity でのアバター制作と変換を支えるツール群です。診断から軽量化、VRM への変換まで、作業の流れをひとつにつなぎます。</p>
-        <div class="intro-actions"><a class="btn btn-primary" href="./tools/avatar-transmute.html"><span data-i18n="button_detail" >詳しくみる</span> <svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#right"/></svg></a><a class="btn btn-secondary" href="https://shikielectronics.github.io/vpm-repository/"><span data-i18n="button_install" >VCC から導入</span> <svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#external"/></svg></a></div>
-      </div><div class="product-panel card" data-reveal><div class="panel-top"><span>PRODUCT 01</span><span class="beta-pill">BETA</span></div><div class="product-glyph" aria-hidden="true"><span>A</span><span>T</span></div><h2>Avatar Transmute</h2>
-        <p data-i18n="product_desc" >アバターの診断・軽量化・VRM 0.x / 1.0 変換を行う Unity Editor 拡張。</p><div class="panel-footer"><span>UNITY 2022.3</span><span>MIT LICENSE</span></div></div></div>
-      <div class="capability-grid"><article class="mini-card" data-reveal style="--reveal-delay:0ms"><span class="feature-num">01</span><h3 data-i18n="feature_diagnose" >診断</h3><p data-i18n="feature_diagnose_desc" >アバターの構成を調べ、変換前に確認する。</p></article><article class="mini-card" data-reveal style="--reveal-delay:70ms"><span class="feature-num">02</span><h3 data-i18n="feature_optimize" >軽量化</h3><p data-i18n="feature_optimize_desc" >メッシュ削減や隠れた面の整理を支援する。</p></article><article class="mini-card" data-reveal style="--reveal-delay:140ms"><span class="feature-num">03</span><h3 data-i18n="feature_convert" >VRM 変換</h3><p data-i18n="feature_convert_desc" >表情・揺れ物・マテリアルなどを変換する。</p></article></div>
-    </section></div></main>
-    <footer class="footer"><span class="footer-brand">SHIKI™</span><span>© 2026 zukki</span><a href="#main"><span data-i18n="back_top" >ページの先頭へ</span> <svg aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/svg/icons.svg#up"/></svg></a></footer>
-  </div>
-</body></html>
+  </body>
+</html>

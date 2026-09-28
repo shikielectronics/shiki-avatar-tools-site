@@ -7,28 +7,44 @@
   const settingsButton = document.getElementById('settings-button');
   const settingsPanel = document.getElementById('settings-panel');
   const sidebarButton = document.getElementById('sidebar-toggle');
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const sidebar = document.getElementById('site-sidebar');
+  const mobileBackdrop = document.createElement('div');
+  mobileBackdrop.className = 'mobile-backdrop';
+  mobileBackdrop.setAttribute('aria-hidden', 'true');
+  sidebar.insertAdjacentElement('afterend', mobileBackdrop);
   const navGroups = [...document.querySelectorAll('[data-nav-group]')];
   const glow = document.querySelector('.cursor-glow');
   const languageControls = [...document.querySelectorAll('#language-select')];
   const page = document.body.dataset.page;
-  const pageKeys = {overview:'nav_overview',news:'nav_news',docs:'nav_docs',docs_install:'common_title',docs_at:'nav_docs_at',license:'nav_license',install:'nav_install',donate:'nav_donate',vpm:'nav_install'};
+  const pageKeys = {overview:'nav_overview',news:'nav_news',docs:'nav_docs',docs_install:'common_title',docs_at:'nav_docs_at',license:'nav_license',install:'nav_install',donate:'nav_donate',support:'nav_support',vpm:'nav_install'};
   const settingsWords = {
-    ja:{name:'設定',open:'設定を開く',close:'設定を閉じる',light:'ライトテーマに切り替える',dark:'ダークテーマに切り替える',expand:'サイドバーを展開する',collapse:'サイドバーを折りたたむ'},
-    ko:{name:'설정',open:'설정 열기',close:'설정 닫기',light:'라이트 테마로 전환',dark:'다크 테마로 전환',expand:'사이드바 펼치기',collapse:'사이드바 접기'},
-    'zh-CN':{name:'设置',open:'打开设置',close:'关闭设置',light:'切换到浅色主题',dark:'切换到深色主题',expand:'展开侧边栏',collapse:'收起侧边栏'},
-    'zh-TW':{name:'設定',open:'開啟設定',close:'關閉設定',light:'切換至淺色主題',dark:'切換至深色主題',expand:'展開側邊欄',collapse:'收合側邊欄'},
-    en:{name:'Settings',open:'Open settings',close:'Close settings',light:'Switch to light theme',dark:'Switch to dark theme',expand:'Expand sidebar',collapse:'Collapse sidebar'}
+    ja:{name:'設定',open:'設定を開く',close:'設定を閉じる',light:'ライトテーマに切り替える',dark:'ダークテーマに切り替える',expand:'サイドバーを展開する',collapse:'サイドバーを折りたたむ',menuOpen:'メニューを開く',menuClose:'メニューを閉じる'},
+    ko:{name:'설정',open:'설정 열기',close:'설정 닫기',light:'라이트 테마로 전환',dark:'다크 테마로 전환',expand:'사이드바 펼치기',collapse:'사이드바 접기',menuOpen:'메뉴 열기',menuClose:'메뉴 닫기'},
+    'zh-CN':{name:'设置',open:'打开设置',close:'关闭设置',light:'切换到浅色主题',dark:'切换到深色主题',expand:'展开侧边栏',collapse:'收起侧边栏',menuOpen:'打开菜单',menuClose:'关闭菜单'},
+    'zh-TW':{name:'設定',open:'開啟設定',close:'關閉設定',light:'切換至淺色主題',dark:'切換至深色主題',expand:'展開側邊欄',collapse:'收合側邊欄',menuOpen:'開啟選單',menuClose:'關閉選單'},
+    en:{name:'Settings',open:'Open settings',close:'Close settings',light:'Switch to light theme',dark:'Switch to dark theme',expand:'Expand sidebar',collapse:'Collapse sidebar',menuOpen:'Open menu',menuClose:'Close menu'}
   };
   let locale = 'ja';
+  let themeColorTimer;
   function translation(key) {
     return messages[locale]?.[key] ?? messages.ja[key];
   }
   function applyTheme(theme) {
     // Keep the visual state, accessible label, browser chrome, and cursor glow in sync.
+    const fading = root.classList.contains('theme-ready') && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (fading) root.classList.add('theme-changing');
     root.dataset.theme = theme;
     themeButton.setAttribute('aria-pressed', String(theme === 'dark'));
     themeButton.setAttribute('aria-label', settingsWords[locale][theme === 'dark' ? 'light' : 'dark']);
-    document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#212121' : '#f2f2f2';
+    // Browser chrome changes after the page fade instead of flashing ahead of it.
+    clearTimeout(themeColorTimer);
+    const updateChrome = () => { document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#212121' : '#f2f2f2'; };
+    if (fading) themeColorTimer = setTimeout(() => {
+      updateChrome();
+      root.classList.remove('theme-changing');
+    }, 720);
+    else { root.classList.remove('theme-changing'); updateChrome(); }
     if (theme === 'light') glow.classList.remove('visible');
   }
   function applySidebar(sidebar) {
@@ -36,11 +52,27 @@
     sidebarButton.setAttribute('aria-expanded', String(sidebar === 'expanded'));
     sidebarButton.setAttribute('aria-label', settingsWords[locale][sidebar === 'expanded' ? 'collapse' : 'expand']);
   }
+  const mobileQuery = matchMedia('(max-width:760px)');
+  function setMobileMenu(open, returnFocus = false) {
+    const isOpen = mobileQuery.matches && open;
+    root.dataset.mobileMenu = isOpen ? 'open' : 'closed';
+    mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+    mobileMenuButton.setAttribute('aria-label', settingsWords[locale][isOpen ? 'menuClose' : 'menuOpen']);
+    sidebar.inert = mobileQuery.matches && !isOpen;
+    if (!isOpen && !settingsPanel.hidden) setSettingsOpen(false);
+    if (isOpen) sidebarButton.focus();
+    else if (returnFocus) mobileMenuButton.focus();
+  }
+  setMobileMenu(false);
+  mobileMenuButton.addEventListener('click', () => setMobileMenu(root.dataset.mobileMenu !== 'open'));
+  mobileBackdrop.addEventListener('click', () => setMobileMenu(false, true));
+  mobileQuery.addEventListener('change', () => setMobileMenu(false));
   try {
     const savedSidebar = localStorage.getItem('shiki-sidebar');
     applySidebar(savedSidebar === 'collapsed' || savedSidebar === 'expanded' ? savedSidebar : matchMedia('(max-width:1100px)').matches ? 'collapsed' : 'expanded');
   } catch { applySidebar(matchMedia('(max-width:1100px)').matches ? 'collapsed' : 'expanded'); }
   sidebarButton.addEventListener('click', () => {
+    if (mobileQuery.matches) { setMobileMenu(false, true); return; }
     const next = root.dataset.sidebar === 'expanded' ? 'collapsed' : 'expanded';
     applySidebar(next);
     try { localStorage.setItem('shiki-sidebar', next); } catch {}
@@ -96,6 +128,7 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !settingsPanel.hidden) { setSettingsOpen(false); settingsButton.focus(); }
     if (event.key === 'Escape') navGroups.forEach(group => { if (!group.querySelector('.nav-branch').hidden) setNavGroupOpen(group, false); });
+    if (event.key === 'Escape' && root.dataset.mobileMenu === 'open') setMobileMenu(false, true);
   });
   function applyLanguage(choice) {
     locale = Object.hasOwn(messages, choice) ? choice : 'ja';
@@ -119,6 +152,7 @@
     settingsButton.setAttribute('aria-label', settingsWords[locale][settingsPanel.hidden ? 'open' : 'close']);
     themeButton.setAttribute('aria-label', settingsWords[locale][root.dataset.theme === 'dark' ? 'light' : 'dark']);
     sidebarButton.setAttribute('aria-label', settingsWords[locale][root.dataset.sidebar === 'expanded' ? 'collapse' : 'expand']);
+    mobileMenuButton.setAttribute('aria-label', settingsWords[locale][root.dataset.mobileMenu === 'open' ? 'menuClose' : 'menuOpen']);
     navGroups.forEach(group => group.querySelector('.nav-disclosure').setAttribute('aria-label', translation(`nav_${group.dataset.navGroup}`)));
     const visibleTitle = document.querySelector('[data-doc-locale]:not([hidden]) h1')?.textContent;
     document.title = `${visibleTitle || translation(pageKeys[page]) || document.querySelector('h1')?.textContent || 'SHIKI Avatar Tools'} — SHIKI™`;
